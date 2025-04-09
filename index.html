@@ -26,16 +26,17 @@
             if (code === "060425ulia") {
                 // Відображаємо зображення торту
                 const cakeImage = document.createElement("img");
-                cakeImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/hp.png"; // Замініть на реальне посилання на зображення
+                cakeImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/hp.png"; // Пряме посилання на зображення
                 cakeImage.alt = "Торт";
                 imageContainer.appendChild(cakeImage);
             } else if (code === "200425easter") {
                 // Відображаємо зображення пасхального яйця
                 const easterEggImage = document.createElement("img");
-                easterEggImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/egg.png"; // Замініть на реальне посилання на зображення
+                easterEggImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/egg.png"; // Пряме посилання на зображення
                 easterEggImage.alt = "Пасхальне яйце";
                 imageContainer.appendChild(easterEggImage);
-            } else {
+            }
+             else {
                 // Якщо код невірний
                 imageContainer.innerHTML = "<p>Невірний код. Спробуйте ще раз.</p>";
             }

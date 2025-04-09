@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codes</title>
+</head>
+<body>
+    <h1>Введіть код:</h1>
+    <input type="text" id="codeInput" placeholder="Введіть код тут">
+    <button onclick="checkCode()">Перевірити код</button>
+
+    <div id="imageContainer" style="margin-top: 20px;">
+        <!-- Зображення буде вставлене сюди -->
+    </div>
+
+    <script>
+        function checkCode() {
+            // Отримуємо введений код
+            const code = document.getElementById("codeInput").value.trim();
+            const imageContainer = document.getElementById("imageContainer");
+
+            // Очищаємо попереднє зображення
+            imageContainer.innerHTML = '';
+
+            if (code === "060425ulia") {
+                // Відображаємо зображення торту
+                const cakeImage = document.createElement("img");
+                cakeImage.src = "https://example.com/cake.jpg"; // Замініть на реальне посилання на зображення
+                cakeImage.alt = "Торт";
+                imageContainer.appendChild(cakeImage);
+            } else if (code === "200425easter") {
+                // Відображаємо зображення пасхального яйця
+                const easterEggImage = document.createElement("img");
+                easterEggImage.src = "https://example.com/easter-egg.jpg"; // Замініть на реальне посилання на зображення
+                easterEggImage.alt = "Пасхальне яйце";
+                imageContainer.appendChild(easterEggImage);
+            } else {
+                // Якщо код невірний
+                imageContainer.innerHTML = "<p>Невірний код. Спробуйте ще раз.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

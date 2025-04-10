@@ -48,6 +48,11 @@
                 djmImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/DJM.png"; // Пряме посилання на зображення
                 djmImage.alt = "Привіт! Мене звати Марк!";
                 imageContainer.appendChild(djmImage);
+
+                const caption = document.createElement("p");
+                caption.textContent = "Привіт! Мене звати Марк!";
+                caption.style.textAlign = "left"; // або інші стилі за бажанням
+                imageContainer.appendChild(caption);
             }
              else {
                 // Якщо код невірний

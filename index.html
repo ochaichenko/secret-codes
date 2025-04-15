@@ -18,8 +18,18 @@
     <script>
         function checkCode() {
             // Отримуємо введений код
+            btoa("090425open") // дає "MDkwNDI1b3Blbg=="
             const code = document.getElementById("codeInput").value.trim();
             const imageContainer = document.getElementById("imageContainer");
+            const inputCode = code.trim(); // введений код користувачем
+            const expectedCode1 = "MDkwNDI1b3Blbg=="; // це "090425open" в Base64
+
+            if (btoa(inputCode) === expectedCode) {
+              const openingImage = document.createElement("img");
+              openingImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/open.png";
+              openingImage.alt = "Відкриття цього сайту!";
+              imageContainer.appendChild(openingImage);
+            } 
 
             // Очищаємо попереднє зображення
             imageContainer.innerHTML = '';
@@ -36,12 +46,6 @@
                 easterEggImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/egg.png"; // Пряме посилання на зображення
                 easterEggImage.alt = "Пасхальне яйце!";
                 imageContainer.appendChild(easterEggImage);
-            } else if (code === "090425open") {
-                // Відображаємо зображення пасхального яйця
-                const openingImage = document.createElement("img");
-                openingImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/open.png"; // Пряме посилання на зображення
-                openingImage.alt = "Відкриття цього сайту!";
-                imageContainer.appendChild(openingImage);
             } else if (code === "DJM") {
                 // Відображаємо зображення пасхального яйця
                 const djmImage = document.createElement("img");

@@ -18,30 +18,29 @@
     <script>
         async function checkCode() {
             
-            const code = document.getElementById("codeInput").value.trim();
-            const imageContainer = document.getElementById("imageContainer");
-            imageContainer.innerHTML = '';
-            // Хеш, який відповідає "090425open"
-            const expectedHash = "d3262295cbf0e02e0c09e0e6b8db17213556e77688a7028f1c91e44a7b398f4f";
-
-            // Функція для отримання SHA-256 хешу
-            async function sha256(str) {
+              const code = document.getElementById("codeInput").value.trim();
+              const imageContainer = document.getElementById("imageContainer");
+              imageContainer.innerHTML = '';
+        
+              const expectedHash = "d3262295cbf0e02e0c09e0e6b8db17213556e77688a7028f1c91e44a7b398f4f"; // 090425open
+        
+              async function sha256(str) {
                 const encoder = new TextEncoder();
                 const data = encoder.encode(str);
                 const hashBuffer = await crypto.subtle.digest('SHA-256', data);
                 const hashArray = Array.from(new Uint8Array(hashBuffer));
                 return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-            }
+              }
         
-            const hashedInput = await sha256(code);
+              const hashedInput = await sha256(code);
         
-            if (hashedInput === expectedHash) {
+              if (hashedInput === expectedHash) {
                 const openingImage = document.createElement("img");
                 openingImage.src = "https://raw.githubusercontent.com/ochaichenko/secret-codes/main/open.png";
                 openingImage.alt = "Відкриття цього сайту!";
                 imageContainer.appendChild(openingImage);
                 return;
-            }
+              }
 
            
 

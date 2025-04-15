@@ -17,6 +17,7 @@
 
     <script>
         function checkCode() {
+            imageContainer.innerHTML = '';
             // Отримуємо введений код
             btoa("090425open") // дає "MDkwNDI1b3Blbg=="
             const code = document.getElementById("codeInput").value.trim();
@@ -31,8 +32,7 @@
               imageContainer.appendChild(openingImage);
             } 
 
-            // Очищаємо попереднє зображення
-            imageContainer.innerHTML = '';
+           
 
             if (code === "060425ulia") {
                 // Відображаємо зображення торту

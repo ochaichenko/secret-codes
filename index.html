@@ -17,11 +17,12 @@
 
     <script>
         function checkCode() {
-            imageContainer.innerHTML = '';
+            
             // Отримуємо введений код
             btoa("090425open") // дає "MDkwNDI1b3Blbg=="
             const code = document.getElementById("codeInput").value.trim();
             const imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = '';
             const inputCode = code.trim(); // введений код користувачем
             const expectedCode1 = "MDkwNDI1b3Blbg=="; // це "090425open" в Base64
 
